@@ -1,3 +1,6 @@
+/// <reference path="../radar/soho-radar.d.ts" />
+/// <reference path="../line/soho-line.d.ts" />
+/// <reference path="../treemap/soho-treemap.d.ts" />
 
 interface SohoChartOptions {
   dataset?: SohoDataSet;
