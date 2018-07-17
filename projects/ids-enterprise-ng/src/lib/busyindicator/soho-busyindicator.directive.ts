@@ -1,3 +1,5 @@
+/// <reference path="./soho-busyindicator.d.ts" />
+
 import {
   AfterViewChecked,
   AfterViewInit,

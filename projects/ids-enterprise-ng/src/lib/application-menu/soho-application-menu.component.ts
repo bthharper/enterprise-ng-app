@@ -1,3 +1,5 @@
+/// <reference path="./soho-application-menu.d.ts" />
+
 import {
   AfterViewInit,
   Component,
