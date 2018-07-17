@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="twelve columns">
+    <h2 class="fieldset-title">Soho Data Grid - Editors</h2>
+  </div>
+</div>
+
+<div class="field">
+  <button soho-button (click)="export($event)">Export to Excel</button>
+  <button soho-button (click)="showErrors()">Show Errors</button>
+  <button soho-button (click)="clearStatus()">Clear Status</button>
+</div>
+
+<br>
+<div class="row top-padding">
+  <div class="twelve columns demo" role="main">
+    <div soho-datagrid>
+    </div>
+  </div>
+</div>

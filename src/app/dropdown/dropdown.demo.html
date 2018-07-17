@@ -1,0 +1,53 @@
+<div class="example-section">
+  <form>
+    <div class="row">
+      <h1>Single-Select Dropdown</h1>
+      <span class="code-tag">Live Example</span>
+      <div class="row">
+        <div class="field">
+          <label for="states" class="label">States</label>
+          <select soho-dropdown noSearch name="states" [(ngModel)]="model.single">
+            <option value="AL">Alabama</option>
+            <option value="CA">California</option>
+            <option value="DE" >Delaware</option>
+            <option value="NY">New York</option>
+            <option value="WY">Wyoming</option>
+          </select>
+          <button soho-button [disabled]="dropDownReadOnly" (click)="setReadonly()">Read Only</button>
+          <button soho-button [disabled]="dropDownDisabled" (click)="setDisable()">Disable</button>
+          <button soho-button [disabled]="!dropDownDisabled && !dropDownReadOnly" (click)="setEnable()">Enable</button>
+        </div>
+        <div class="field">
+          <label for="states-readonly" class="label">States - ReadOnly</label>
+          <select soho-dropdown name="states-readonly" readOnly [(ngModel)]="model.readOnly">
+            <option value="AL">Alabama</option>
+            <option value="CA">California</option>
+            <option value="DE">Delaware</option>
+            <option value="NY">New York</option>
+            <option value="WY">Wyoming</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="states-source" class="label">States - From Source</label>
+          <select soho-dropdown name="states-source" [source]="source" [(ngModel)]="model.sourceAlpha.value">
+            <option *ngFor="let option of model.sourceAlpha.options" [value]="option.value">{{option.label}}</option>
+          </select>
+        </div>
+        <div class="field">
+          <button soho-button (click)="onAddOption()">Add Option</button>
+          <button soho-button (click)="onRemoveOption()">Remove Option</button>
+          <hr>
+          <label for="states-modifiable" class="label">Modifiable States</label>
+          <select soho-dropdown name="states-modifiable" [(ngModel)]="model.modifiable">
+            <option *ngFor="let option of options" [ngValue]="option">{{option.text}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </form>
+  <button soho-button (click)="toggleModel()">{{showModel ? 'Hide' : 'Show'}} Model</button>
+  <div *ngIf="showModel">
+    <hr>
+    <h3>{{ model | json }}</h3>
+  </div>
+</div>

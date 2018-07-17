@@ -1,0 +1,25 @@
+﻿<div class="two-column no-scroll" role="main">
+  <div class="sidebar scrollable" style="width: 20%">
+    <div class="panel-header">
+      <div class="toolbar standalone">
+        <div class="title">
+          <span>Nodes</span>
+        </div>
+
+        <div class="buttonset">
+          <button soho-button="icon" icon="expand-all" title="Expand All" id="expand-collapse">
+            <span>Expand All</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <ul soho-tree></ul>
+    <soho-splitter [isSplitterRight]="true" [collapseButton]="true" [save]="false">
+      <div class="panel-header"></div>
+    </soho-splitter>
+  </div>
+
+  <div class="scrollable-area no-scroll" style="width: 80%">
+    <div soho-datagrid></div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="twelve columns">
+    <h2 class="fieldset-title">Soho Data Grid - Service</h2>
+    <div class="field">
+      <button soho-button (click)="addRow()">Add Row</button>
+      <button soho-button (click)="busy()">Busy</button>
+      <button soho-button (click)="toggleFilterRow()">Toggle Filter Row</button>
+      <button soho-button (click)="clearFilter()">Clear Filter</button>
+      <button soho-button (click)="sortColumn()">Sort Column</button>
+    </div>
+  </div>
+</div>
+<ul soho-popupmenu id="grid-actions-menu">
+    <li><a soho-popupmenu-item>Action One</a></li>
+    <li><a soho-popupmenu-item>Action Two</a></li>
+    <li><a soho-popupmenu-item>Action Three</a>
+      <ul soho-popupmenu>
+        <li><a soho-popupmenu-item>Action Four</a></li>
+        <li><a soho-popupmenu-item>Action Five</a></li>
+      </ul>
+    </li>
+  </ul>
+<br>
+<div class="row top-padding">
+  <div class="twelve columns demo" role="main">
+    <section soho-busyindicator class="scrollable contained-scrolling-right-bottom" style="height: 100%">
+      <div soho-datagrid
+        (selected)="onSelected($event)"
+        (openFilterRow)="onOpenFilterRow($event)"
+        (closeFilterRow)="onCloseFilterRow($event)"
+        selectable="multiple"
+        filterable="true"
+      ></div>
+    </section>
+  </div>
+</div>

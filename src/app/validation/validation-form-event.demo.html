@@ -1,0 +1,117 @@
+<div class="example-section">
+
+  <form [formGroup]="form"
+    soho-input-validate (error)="onError($event)" (valid)="onValid($event)"
+  >
+    <div class="row">
+      <h1>Validation Form - Events</h1>
+      <span class="code-tag">Live Example</span>
+      <div class="row">
+        <div class="four columns">
+          <div class="field">
+            <label soho-label>Dropdown testing for soho-error</label>
+            <button soho-button (click)="addError()">Add Error</button>
+          </div>
+        </div>
+        <div class="four columns">
+          <div class="field">
+            <label soho-label></label>
+            <button soho-button (click)="removeError()">Remove Error</button>
+          </div>
+        </div>
+        <div class="four columns">
+          <div class="field">
+            <label soho-label></label>
+            <button soho-button (click)="goToError()">Go to Error</button>
+          </div>
+        </div>
+      </div>
+
+	    <div class="row">
+        <div class="six columns">
+          <div class="field">
+            <label soho-label [required]="model.EventField.required" for="EventField">EventField</label>  
+            <input id="EventField" name="EventField" formControlName="EventField"
+              [(ngModel)]="model.EventField.value" [data-validate]="isRequired('EventField')"
+              soho-trackdirty (pristine)="onPristine($event)" (dirty)="onDirty($event)" (afterResetDirty)="onAfterResetDirty($event)"
+              (error)="onValidationEvent($event)" (valid)="onValidationEvent($event)"
+            >
+            <p>{{status('EventField')}}<br>{{event('EventField')}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="six columns">
+          <div class="field">
+            <label soho-label [required]="model.AlphaField.required" for="AlphaField">AlphaField</label>
+            <input id="AlphaField" name="AlphaField" formControlName="AlphaField"
+              [(ngModel)]="model.AlphaField.value" attr.data-validate="{{isRequired('AlphaField')}}"
+              soho-trackdirty (pristine)="onPristine($event)" (dirty)="onDirty($event)" (afterResetDirty)="onAfterResetDirty($event)" 
+              (error)="onValidationEvent($event)" (valid)="onValidationEvent($event)"
+            >
+            <p>{{status('AlphaField')}}<br>{{event('AlphaField')}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="six columns">
+          <div class="field">
+            <label soho-label [required]="model.NumericField.required" for="NumericField">Numeric Field</label>
+            <input id="NumericField" name="NumericField" formControlName="NumericField"
+              [(ngModel)]="model.NumericField.value" attr.data-validate="{{isRequired('NumericField')}}"
+              soho-input
+              soho-mask [process]="'number'" [sohoPattern]="'###.##'"
+              soho-trackdirty (pristine)="onPristine($event)" (dirty)="onDirty($event)" (afterResetDirty)="onAfterResetDirty($event)"
+            >
+            <p>{{status('NumericField')}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="six columns">
+          <div class="field">
+            <label soho-label [required]="model.DateField.required" for="DateField">Date Field</label>
+            <input id="DateField" name="DateField" formControlName="DateField"
+              [(ngModel)]="model.DateField.value" attr.data-validate="{{isRequired('DateField')}}"
+              soho-datepicker dateFormat="MM/dd/yyyy" mode="standard"
+              soho-trackdirty (pristine)="onPristine($event)" (dirty)="onDirty($event)" (afterResetDirty)="onAfterResetDirty($event)"
+            >
+            <p>{{status('DateField')}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+         <div class="six columns">
+          <div class="field">
+            <label soho-label [required]="model.DropdownField.required" for="DropdownField">Dropdown Field</label>
+            <select class="dropdown" id="DropdownField" name="DropdownField" formControlName="DropdownField"
+              [(ngModel)]="model.DropdownField.value" attr.data-validate="{{isRequired('DropdownField')}}"
+              soho-dropdown soho-trackdirty (pristine)="onPristine($event)" (dirty)="onDirty($event)" (afterResetDirty)="onAfterResetDirty($event)"
+              soho-error
+            >
+              <option *ngFor="let option of ['Option #1', 'Option #2', 'Option #3']" [value]="option">{{option}}</option>
+            </select>
+            <p>{{status('DropdownField')}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="six columns">
+          <button soho-button [disabled]="disableSave" (click)="saveForm()">Save</button>
+          <p>Save button is enabled when the Form Status is dirty and valid</p>
+          <p>Form {{status()}}</p>
+        </div>
+      </div>
+    </div>
+  </form>
+  <button soho-button (click)="toggleModel()">{{showModel ? 'Hide' : 'Show'}} Model</button>
+  <div *ngIf="showModel">
+    <hr>
+    <h3>{{ model | json }}</h3>
+  </div>
+</div>

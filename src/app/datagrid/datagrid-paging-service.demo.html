@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="twelve columns">
+    <h2 class="fieldset-title">Soho Data Grid - Paging Service</h2>
+  </div>
+</div>
+
+<br>
+<div class="row top-padding">
+  <div class="twelve columns demo" role="main">
+    <div soho-datagrid (rowClicked)="onRowClicked($event)" (settingsChanged)="onSettingsChanged($event)" (rendered)="onRendered($event)"></div>
+  </div>
+</div>
+
+<div class="compound-field">
+  <div class="field">
+    <button soho-button (click)="exportExcel($event)">Export to Excel</button>
+  </div>
+  <div class="field">
+    <button soho-button (click)="exportCsv($event)">Export to CSV</button>
+  </div>
+</div>

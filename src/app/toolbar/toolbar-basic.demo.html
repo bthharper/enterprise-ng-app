@@ -1,0 +1,69 @@
+<div class="row">
+  <div class="full-width column">
+
+    <soho-toolbar
+        [maxVisibleButtons]="6"
+        [resizeContainers]="true"
+        [favorButtonset]="true"
+        (selected)="onSelected($event)">
+
+      <soho-toolbar-title>
+        <span soho-toolbar-section-title>Basic Standard Toolbar</span>
+      </soho-toolbar-title>
+
+      <soho-toolbar-button-set>
+        <!-- search field -->
+        <label class="audible" attr.for="my-search-field">Search</label>
+        <input soho-toolbar-searchfield id="my-search-field" placeholder="Search" title="Search" name="Search"/>
+
+        <!-- buttons -->
+        <button soho-button="icon" icon="filter" title="Filter" isToggle=true data-action="{'button':'filter'}">
+          <span class="audible">Filter</span>
+        </button>
+
+        <button soho-button="icon" icon="add" title="Add" data-action="{'button':'add'}">
+          <span class="audible">Add</span>
+        </button>
+
+        <!--
+        If I don't put the icon='pie-chart' in single quotes the input won't work.
+        My guess is we have to use icon='some-icon' or [icon]="'some-icon'"
+        -->
+        <button soho-menu-button class="btn-menu" id="charts-btn" title="Charts" [icon]="'pie-chart'" data-action="{\'btn\' : \'charts\'}">
+          <span class="audible">Charts</span>
+        </button>
+        <ul class="popupmenu">
+          <li id="pie">
+            <a data-action="{'item':'pie'}">Pie Chart</a>
+          </li>
+          <li id="line">
+            <a data-action="{'item':'line'}">Line Chart</a>
+          </li>
+          <li id="bubble">
+            <a data-action="{'item':'bubble'}">Bubble Chart</a>
+          </li>
+        </ul>
+
+        <!--// TODO: better menu definition, run by ed coyle and see what he thinks
+        <button soho-menu-button icon="charts" title="Charts" menuId="charts-menu"></button>
+          <ul soho-menu popup="true" class="popupmenu has-icons" id="charts-menu">
+          <li soho-menu-item><a href="#" button-data="{'item':'pie'}">Pie Chart</a></li>
+          <li soho-menu-item><a href="#" button-data="{'item':'pie'}">Line Chart</a></li>
+          <li soho-menu-item><a href="#" button-data="{'item':'pie'}">Bubble Chart</a></li>
+        </ul>-->
+
+        <button soho-button="icon" icon="folder" name="Open" title="Open" data-action="{'button':'open'}">
+          Open
+        </button>
+        <button soho-button="icon" icon="delete" title="Delete" data-action="{'button':'delete'}">
+          Delete
+        </button>
+        <button soho-button="icon" icon="refresh" title="Refresh" data-action="{'button':'refresh'}">
+          Refresh
+        </button>
+
+      </soho-toolbar-button-set>
+    </soho-toolbar>
+
+  </div>
+</div>

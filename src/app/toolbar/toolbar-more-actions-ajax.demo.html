@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="full-width column">
+
+    <soho-toolbar
+      [maxVisibleButtons]="4"
+      [hasMoreButton]="true"
+      [favorButtonset]="true"
+      (selected)="onSelected($event)"
+      [moreMenuSettings]="{ beforeOpen: onBeforeContextMenuOpen }">
+
+      <soho-toolbar-title>
+        <span soho-toolbar-section-title>Toolbar with Pre-Defined "More Actions" Menu</span>
+      </soho-toolbar-title>
+
+      <soho-toolbar-button-set>
+        <button soho-button="btn" icon="print" data-action="{'button':'print'}">
+          <span>Print</span>
+        </button>
+
+        <button soho-button="btn" icon="settings" data-action="{'button':'settings'}">
+          <span>Settings</span>
+        </button>
+
+        <button soho-button="btn" icon="save" data-action="{'button':'save'}">
+          <span>Save</span>
+        </button>
+
+        <button soho-button="btn" icon="mail" data-action="{'button':'email'}">
+          <span>Send as Email</span>
+        </button>
+      </soho-toolbar-button-set>
+
+      <soho-toolbar-more-button>
+        <div class="popupmenu-wrapper">
+          <ul soho-popupmenu id="my-popupmenu-element" class="popupmenu" [beforeOpen]="onBeforeContextMenuOpen">
+            <li soho-popupmenu-item>
+              <a soho-popupmenu-label>Pre-defined option 1</a>
+            </li>
+            <li soho-popupmenu-item>
+              <a soho-popupmenu-label>Pre-defined option 2</a>
+            </li>
+          </ul>
+        </div>
+      </soho-toolbar-more-button>
+    </soho-toolbar>
+
+  </div>
+</div>

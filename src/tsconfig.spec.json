@@ -5,6 +5,7 @@
     "module": "commonjs",
     "types": [
       "jasmine",
+      "jquery",
       "node"
     ]
   },

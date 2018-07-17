@@ -1,0 +1,290 @@
+:host {
+  transition: height 0.5s ease;
+  width: 100%;
+}
+
+:host .code-block {
+  border-radius: 2px;
+  display: inline-block;
+  padding: 2px;
+  width: calc(100% - 58px);
+}
+
+/* Show Labels Functionality */
+:host(.hide-labels) ::ng-deep label {
+  display: none;
+}
+
+:host(.hide-labels) ::ng-deep .field-options {
+  margin-right: 15px;
+}
+
+/* Right Buttons */
+:host ::ng-deep .code-block-container > button {
+  display: inline-block;
+}
+
+:host .code-block-actions {
+  transform: rotate(90deg);
+  left: -17px;
+  visibility: visible;
+}
+
+:host .code-block-buttons {
+  position: relative;
+  left: 5px;
+  display: inline-block;
+}
+
+/* Style Parent and inner Focus */
+:host .code-block.is-active {
+  border: 1px solid #368ac0;
+  box-shadow: 0 0 4px 3px rgba(54, 138, 192, .3);
+}
+
+:host .code-block.is-active input {
+  box-shadow: none !important;
+}
+
+:host ::ng-deep .field.is-active {
+  border: 1px solid #368ac0;
+}
+
+:host ::ng-deep .field.is-active .field-options:not([disabled]) {
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Make Label and Input Inline */
+:host ::ng-deep .lookup-wrapper,
+:host ::ng-deep .label {
+  display: inline;
+}
+
+:host ::ng-deep .field {
+  border: 1px solid transparent;
+  border-radius: 2px;
+  display: inline-block;
+  margin-bottom: -3px;
+  padding-left: 12px;
+  margin-right: -12px;
+  padding-right: 0;
+  vertical-align: middle;
+  padding-top: 0px;
+  margin-top: -3px;
+  margin-left: -3px;
+  padding-bottom: 0;
+  height: 34px;
+  line-height: 34px;
+}
+
+:host ::ng-deep .field:not(:last-of-type):not(.is-active)::after {
+  content: '•';
+  position: absolute;
+  font-size: 18px;
+  color: #5C5C5C;
+  right: 18px;
+  top: -1px;
+  width: 4px;
+}
+
+:host ::ng-deep .field.is-active::after {
+  content: '';
+}
+
+:host ::ng-deep .field.is-active:focus {
+  box-shadow: none !important;
+}
+
+/* Adjust labels and input styles */
+:host ::ng-deep .label {
+  position: relative;
+  top: -1px;
+}
+
+/* Add a : After the label */
+:host ::ng-deep .label::after {
+  content: ':';
+}
+
+:host ::ng-deep input{
+  border-color: transparent;
+  padding-left: 0;
+  transition: margin .5s ease, left .5s ease, padding .5s ease, width .5s ease;
+  width: auto; /* IE doesnt support initial */
+  width: initial;
+}
+
+:host ::ng-deep .is-number-mask {
+  text-align: left;
+}
+
+:host ::ng-deep .lookup,
+:host ::ng-deep input {
+  padding: 0;
+}
+
+:host ::ng-deep .lookup:focus {
+  box-shadow: none !important;
+}
+
+/* Other Input Types */
+:host ::ng-deep input[readonly] {
+  background-color: transparent;
+}
+
+/* Make Elements Sit Well Next to Each other */
+:host ::ng-deep .field .field-options:not([disabled]).lookup,
+:host ::ng-deep .field.is-active .field-options:not([disabled]).lookup,
+:host ::ng-deep .field .field-options:not([disabled]),
+:host ::ng-deep .field .field-options:not([disabled]).datepicker,
+:host ::ng-deep .field.is-active .field-options:not([disabled]).datepicker,
+:host ::ng-deep .field .dropdown-wrapper  {
+  margin-left: 3px;
+  margin-right: 18px;
+}
+
+/* Support for IE, Edge and FF */
+.ie :host ::ng-deep .field .field-options:not([disabled]).lookup,
+.is-firefox :host ::ng-deep .field .field-options:not([disabled]).lookup,
+.ie :host ::ng-deep .field.is-active .field-options:not([disabled]).lookup,
+.is-firefox :host ::ng-deep .field.is-active .field-options:not([disabled]).lookup,
+.ie :host ::ng-deep .field .field-options:not([disabled]),
+.is-firefox :host ::ng-deep .field .field-options:not([disabled]),
+.ie :host ::ng-deep .field .field-options:not([disabled]).datepicker,
+.is-firefox :host ::ng-deep .field .field-options:not([disabled]).datepicker,
+.ie :host ::ng-deep .field.is-active .field-options:not([disabled]).datepicker,
+.is-firefox :host ::ng-deep .field.is-active .field-options:not([disabled]).datepicker {
+  margin-right: 0px;
+}
+
+:host ::ng-deep .field.is-active .field-options:not([disabled]) {
+  margin-right: 9px;
+}
+
+:host ::ng-deep .field input.field-options:not([disabled]).lookup.is-active,
+:host ::ng-deep .field.is-active .field-options:not([disabled]).datepicker {
+  padding-right: 10px;
+}
+
+:host ::ng-deep .field.is-active::before,
+:host ::ng-deep .datepicker + .icon {
+  visibility: hidden;
+}
+
+:host ::ng-deep .datepicker.is-active + .icon {
+  visibility: visible;
+  z-index: 2;
+}
+
+:host ::ng-deep .trigger {
+  visibility: hidden;
+  margin-left: -33px;
+}
+
+:host ::ng-deep input.is-active + .trigger {
+  visibility: visible;
+}
+
+:host ::ng-deep input.is-active + .trigger .icon {
+  fill: #5c5c5c !important;
+}
+
+:host ::ng-deep .lookup-wrapper.is-active + .trigger{
+  visibility: visible;
+}
+
+/* Adjust the Field Options */
+:host ::ng-deep .btn-actions {
+  visibility: hidden;
+  left: -15px;
+  margin-right: -22px;
+  top: 0px;
+  z-index: 1;
+}
+
+:host ::ng-deep .field.is-fieldoptions .lookup-wrapper .btn-actions {
+  left: -15px;
+}
+
+:host ::ng-deep .field-options.checkbox ~ .btn-actions,
+:host ::ng-deep .field-options.dropdown ~ .btn-actions {
+  top: 0;
+}
+
+:host ::ng-deep input.is-active + .trigger + .btn-actions {
+  border: none;
+  box-shadow: none !important;
+  left: -15px;
+  visibility: visible;
+  margin-right: -18px;
+}
+
+/* Input Field with field options */
+:host ::ng-deep .btn-actions.is-active {
+  border: none;
+  box-shadow: none !important;
+  visibility: visible;
+}
+
+:host ::ng-deep .field.is-active::before {
+  visibility: hidden;
+}
+
+/* Readonly Styles */
+:host ::ng-deep .data {
+  padding-left: 3px;
+  padding-right: 41px;
+  font-size: 1.4rem;
+}
+
+:host ::ng-deep .input-style.is-readonly .field::after {
+  right: 20px;
+  top: -3px;
+}
+
+/* Style Datepicker alignment */
+:host ::ng-deep .field-options.datepicker {
+  width: auto; /* IE doesnt support initial */
+  width: initial;
+}
+
+/* Style Checkbox alignment */
+:host ::ng-deep .field .checkbox-label {
+  margin-right: 18px;
+}
+
+:host ::ng-deep div.field + .field-checkbox {
+  margin-bottom: -3px !important;
+}
+
+/* Style Dropdown & alignment */
+:host ::ng-deep .dropdown {
+  height: 32px !important;
+  padding: 8px 0;
+  border-width: 0;
+  vertical-align: top;
+}
+
+:host ::ng-deep .field .dropdown-sm {
+  width: auto;
+  min-width: 61px;
+  max-width: 100px;
+  padding-right: 0;
+  transition: padding 0.5s ease;
+}
+
+:host ::ng-deep .field .dropdown-sm.is-open {
+  padding-right: 28px;
+  transition: padding 0.5s ease;
+}
+
+:host ::ng-deep .dropdown + .icon {
+  right: 24px;
+  visibility: hidden;
+}
+
+:host ::ng-deep .field.is-active div.dropdown:not(.is-open) {
+  border-width: 0;
+  box-shadow: none;
+}

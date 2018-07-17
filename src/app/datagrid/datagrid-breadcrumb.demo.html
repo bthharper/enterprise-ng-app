@@ -1,0 +1,15 @@
+<div class="two-column no-scroll" role="main">
+  <h2 class="fieldset-title">Soho Data Grid - Toolbar with Breadcrumb</h2>
+  <div class="field">
+    <button soho-button (click)="addRow()">Add Row</button>
+    <button soho-button (click)="busy()">Busy</button>
+    <button soho-button (click)="toggleFilterRow()">Toggle Filter Row</button>
+    <button soho-button (click)="clearFilter()">Clear Filter</button>
+  </div>
+  <br>
+  <div class="scrollable-area no-scroll">
+    <soho-datagrid-toolbar-demo></soho-datagrid-toolbar-demo>
+    <div soho-busyindicator soho-datagrid (selected)="onSelected($event)" selectable="multiple" filterable="true">
+    </div>
+  </div>
+</div>

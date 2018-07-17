@@ -12,9 +12,22 @@
     "typeRoots": [
       "node_modules/@types"
     ],
+    "types": [
+      "jasmine",
+      "jquery",
+      "node"
+    ],
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ids-enterprise-ng": [
+        "dist/ids-enterprise-ng"
+      ],
+      "ids-enterprise-ng/*": [
+        "dist/ids-enterprise-ng/*"
+      ]
+    }
   }
 }
