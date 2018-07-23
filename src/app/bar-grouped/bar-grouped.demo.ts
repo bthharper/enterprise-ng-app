@@ -3,7 +3,7 @@ import {
   OnInit,
   ViewChild
 } from '@angular/core';
-import {SohoBarComponent} from '../../soho/bar';
+import {SohoBarComponent} from 'ids-enterprise-ng../../soho/bar';
 
 @Component({
   selector: 'soho-bar-demo',
