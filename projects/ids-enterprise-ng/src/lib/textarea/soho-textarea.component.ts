@@ -1,3 +1,5 @@
+/// <reference path="soho-textarea.d.ts" />
+
 import {
   AfterViewInit,
   ChangeDetectionStrategy,
@@ -119,8 +121,12 @@ export class SohoTextAreaComponent extends BaseControlValueAccessor<string> impl
 
   /**
    * Called when the textarea updates in some way
+   *
+   * @todo fix this event to be called 'updated'.
    */
-  @Output() onUpdated = new EventEmitter<SohoTextAreaEvent>();
+  @Output() onUpdated = new EventEmitter<SohoTextAreaEvent>(); /// Badly named? Change to 'updated'.
+
+  // @todo Change to 'changed'.
   @Output() change: EventEmitter<SohoTextAreaEvent[]> = new EventEmitter<SohoTextAreaEvent[]>();
 
   // -------------------------------------------

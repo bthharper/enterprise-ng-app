@@ -1,3 +1,5 @@
+/// <reference path="soho-stepprocess.d.ts" />
+
 import {
   AfterViewInit,
   Component,
@@ -191,6 +193,7 @@ export class SohoStepProcessComponent implements AfterViewInit, OnDestroy {
   // ------------------------------------------------------------------------
 
   @Output() beforeSelectStep = new EventEmitter<BeforeSelectStepEvent>();
+
   @Output() onSaveClose: EventEmitter<SohoStepSaveCloseEvent> = new EventEmitter<SohoStepSaveCloseEvent>();
 
   // ------------------------------------------------------------------------

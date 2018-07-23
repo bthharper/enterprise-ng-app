@@ -7,7 +7,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build_lib": "ng build --prod ids-enterprise-ng",
+    "npm_pack": "cd dist/ids-enterprise-ng && npm pack",
+    "package": "npm run build_lib && npm run npm_pack"
   },
   "private": true,
   "dependencies": {
@@ -36,6 +39,7 @@
     "@types/jasmine": "~2.8.6",
     "@types/jasminewd2": "~2.0.3",
     "@types/jquery": "^3.3.1",
+    "@types/lscache": "^1.0.29",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.2.1",
     "jasmine-core": "~2.99.1",
@@ -45,7 +49,7 @@
     "karma-coverage-istanbul-reporter": "~2.0.0",
     "karma-jasmine": "~1.1.1",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "ng-packagr": "^3.0.0-rc.2",
+    "ng-packagr": "^3.0.5",
     "protractor": "~5.3.0",
     "ts-node": "~5.0.1",
     "tsickle": ">=0.25.5",

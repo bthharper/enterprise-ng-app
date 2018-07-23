@@ -1,4 +1,4 @@
-/// <reference path="./soho-error.d.ts" />
+/// <reference path="soho-error.d.ts" />
 
 import { AfterViewInit, Directive, ElementRef, Input } from '@angular/core';
 

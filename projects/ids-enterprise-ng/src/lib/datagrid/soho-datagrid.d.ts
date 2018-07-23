@@ -5,6 +5,8 @@
  * interface of the Soho jQuery datagrid control.
  */
 
+/// <reference path="../pager/soho-pager.d.ts" />
+
 /**
  * Possible row height options.
  */

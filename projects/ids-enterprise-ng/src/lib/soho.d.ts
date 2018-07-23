@@ -1,8 +1,8 @@
-interface JQueryStatic {
-}
+// interface JQueryStatic {
+// }
 
-interface JQuery {
-}
+// interface JQuery {
+// }
 
 interface SohoStatic {
 }

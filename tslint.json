@@ -116,6 +116,12 @@
       "check-separator",
       "check-type"
     ],
+
+    // The rule have the following arguments:
+    // [ENABLED, "attribute" | "element", "selectorPrefix" | ["listOfPrefixes"], "camelCase" | "kebab-case"]
+    "directive-selector": [true, "attribute", ["soho", "demo"], "kebab-case"],
+    "component-selector": [true, "element", ["soho", "demo"], "kebab-case"],
+
     "no-output-on-prefix": true,
     "use-input-property-decorator": true,
     "use-output-property-decorator": true,

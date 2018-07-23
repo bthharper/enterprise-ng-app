@@ -5,6 +5,8 @@
  * interface of the Soho jQuery searchfield control.
  */
 
+/// <reference path="../autocomplete/soho-autocomplete.d.ts" />
+
 /**
  * Configuration options.
  */

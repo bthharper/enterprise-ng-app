@@ -1,3 +1,5 @@
+/// <reference path="soho-modal-dialog.d.ts" />
+
 import { Injector } from '@angular/core';
 
 import { SohoModalDialogRef } from './soho-modal-dialog.ref';

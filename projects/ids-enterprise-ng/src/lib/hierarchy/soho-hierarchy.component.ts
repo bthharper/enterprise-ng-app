@@ -1,3 +1,5 @@
+/// <reference path="soho-hierarchy.d.ts" />
+
 import {
   AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, HostBinding, Input,
   OnDestroy, Output, EventEmitter
@@ -67,7 +69,7 @@ export class SohoHierarchyComponent implements OnDestroy, AfterViewInit {
 
   /**
    * Leaf is selected
-   * 
+   *
    */
   @Output() selected = new EventEmitter<SohoHierarchyEvent>();
 

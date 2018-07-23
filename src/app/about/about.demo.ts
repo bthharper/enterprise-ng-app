@@ -6,7 +6,7 @@ import {
 } from 'ids-enterprise-ng';
 
 @Component({
-  selector: 'soho-about.demo',
+  selector: 'app-about.demo',
   templateUrl: './about.demo.html'
 })
 export class AboutDemoComponent {
